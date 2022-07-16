@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+{% for places in all_travel %}
+
+    <div class="places">
+        <ul>
+            <li>{{ places.name }}, {{ places.country.name }}</li>
+        </ul>
+    </div>
+
+{% endfor %}
+
+{% endblock %}

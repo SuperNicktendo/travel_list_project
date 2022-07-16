@@ -7,3 +7,7 @@ import repositories.country_repository as country_repository
 
 travel_blueprint = Blueprint("travel", __name__)
 
+@travel_blueprint.route('/list')
+def bucket_list():
+    places = city_repository.select_all()
+    return render_template('visit/list.html', all_travel = places)

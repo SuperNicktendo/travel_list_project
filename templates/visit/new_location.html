@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <form action="/list" method="post">
+        <label for="country">Country: </label>
+        <input type="text" id="country" name="country_id" placeholder="Country" required>
+        <br>
+        <button type="submit">Add to list</button>
+    </form>
+</section>
+{% endblock  %}

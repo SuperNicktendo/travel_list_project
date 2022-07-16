@@ -31,6 +31,12 @@ def select(id):
         country = Country(result['name'], result['id'])
     return country
 
+def delete(id):
+    sql = "DELETE FROM countries WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
 
 
 

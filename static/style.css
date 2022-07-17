@@ -1,15 +1,24 @@
 body {
-    background-image: url('images/vintage-compass-lies-ancient-world-map-still-life-31239815.jpeg');
-    background-size: cover;
-    background-color: lavender;
+    background-color: white;
     font-family:fantasy;
-    color: wheat;
+    color: rgb(67, 57, 39);
 }
 
 header {
     background-color: goldenrod;
     margin: auto;
     color: brown;
+}
+
+.homepage-title {
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-body {
+    display: flex;
+    justify-content:flex-start;
+
 }
 
 .menu {

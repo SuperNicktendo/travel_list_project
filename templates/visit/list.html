@@ -5,10 +5,12 @@
     
 {% for places in all_travel %}
     <div class="places">
-        <ul>
-            <li>{{ places.name }}, {{ places.country.name }} 
-            </li>
-        </ul>
+        {{ places.name }}, {{ places.country.name }}
+        <div>
+            <form class="delete-form" action="/list/{{ places.id }}/delete" method="POST">
+                <button>Delete</button>
+            </form>
+        </div>
     </div>
 {% endfor %}
 

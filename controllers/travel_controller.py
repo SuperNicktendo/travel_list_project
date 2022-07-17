@@ -47,7 +47,7 @@ def add_cty():
 #DELETE FROM LIST
 @travel_blueprint.route('/list/<id>/delete', methods=['POST'])
 def delete_location(id):
-    country_repository.delete(id)
+    city_repository.delete(id)
     return redirect('/list')
 
 

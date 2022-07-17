@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<h2>My Travel Bucket List</h2>
     
 {% for places in all_travel %}
-
     <div class="places">
         <ul>
             <li>{{ places.name }}, {{ places.country.name }} 

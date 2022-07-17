@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="country-list">
+    <h2>My Countries</h2>
+    {% for country in all_countries  %}
+    <ul>
+        <li>{{ country.name }}</li>
+    </ul>
+    {% endfor %}
+</section>
+<section>
+    <form action="/my_countries" method="post">
+        <label for="country">Country: </label>
+        <input type="text" id="country" name="country_id" placeholder="Country" required>
+        <br>
+        <button type="submit">Add to list</button>
+    </form>
+</section>
+    
+{% endblock  %}

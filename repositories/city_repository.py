@@ -30,7 +30,7 @@ def select(id):
     if results:
         result = results[0]
         country = country_repository.select(result['country_id'])
-        city = City(result['name'], country, result['visted'], result['id'])
+        city = City(result['name'], country, result['visited'], result['id'])
     return city
 
 def delete(id):

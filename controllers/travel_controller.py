@@ -50,8 +50,6 @@ def delete_location(id):
     city_repository.delete(id)
     return redirect('/list')
 
-#DELETE COUNTRY
-
 #EDIT 
 @travel_blueprint.route('/<id>/edit', methods=["GET"])
 def edit_location(id):
@@ -59,17 +57,16 @@ def edit_location(id):
     country = country_repository.select_all()
     return render_template('visit/edit.html', city = city, all_countries = country)
 
-#UPDATE
+# UPDATE
 @travel_blueprint.route('/<id>/edit', methods=["POST"])
 def update_list(id):
-    city_name = request.form("city-name")
+    city_name = request.form["city-name"]
     country_id = request.form["country_id"]
     country = country_repository.select(country_id)
     city = City(city_name, country)
     city_repository.update(city)
-    return redirect('/list')
+    return redirect('/list')    
 
-
-#HAS VISITED 
+# UPDATE VISITED
 
 

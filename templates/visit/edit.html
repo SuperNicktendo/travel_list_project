@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <section>
-        <form action="/list" method="post">
+        <form action="/{{city.id}}/edit" method="post">
             <label for="city">City: </label>
             <input type="text" id="city" name="city-name" placeholder="City" required>
             <br>

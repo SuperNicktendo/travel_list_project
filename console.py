@@ -1,8 +1,11 @@
 import pdb
 from models.city import City
 from models.country import Country
+from models.user import User
+from models.visited import Visit
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
+import repositories.user_repository as user_repository
 
 country1 = Country("Japan")
 country_repository.save(country1)
@@ -24,6 +27,8 @@ city_repository.save(city4)
 city5 = City("Barcelona", country4)
 city_repository.save(city5)
 
+user1 = User("Nick")
+user_repository.save(user1)
 
 
 pdb.set_trace()

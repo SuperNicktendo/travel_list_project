@@ -44,11 +44,6 @@ def update(city):
     values = [city.name, city.country.id, city.visited, city.id]
     run_sql(sql, values)
 
-def update_visited(city):
-    sql = "UPDATE cities SET visited = %s WHERE id = %s"
-    values = [city.visited]
-    run_sql(sql, values)
-
 
 
 

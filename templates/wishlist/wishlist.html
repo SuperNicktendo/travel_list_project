@@ -2,9 +2,9 @@
 {% block content %}
     <h2>The Gold List</h2>
     <section>
-        {% for city in all_cities %}
+        {% for places in all_places %}
             <ul>
-                <li>{{ city.name }}, {{ city.country.name }}</li>
+                <li>{{ places.city.id }}</li>
             </ul>
         {% endfor %}
     </section>

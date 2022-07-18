@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    
+    {% for city in cities  %}
+        <ul>
+            <li>{{ city.id }}</li>
+        </ul>
+        
+    {% endfor %}
 {% endblock  %}

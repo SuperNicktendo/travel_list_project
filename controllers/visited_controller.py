@@ -15,3 +15,4 @@ visit_blueprint = Blueprint("visit", __name__)
 @visit_blueprint.route('/visited', methods=["GET"])
 def show_visited():
     visited = visited_repository.select_all()
+    return render_template('visited/visited.html', all_visits=visited)

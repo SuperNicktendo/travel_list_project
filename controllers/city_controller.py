@@ -15,7 +15,8 @@ city_blueprint = Blueprint("city", __name__)
 @city_blueprint.route('/my_cities', methods=["GET"])
 def show_cities():
     cities = city_repository.select_all()
-    return render_template('city/my_cities.html', all_cities = cities)
+    countries = country_repository.select_all()
+    return render_template('city/my_cities.html', all_cities = cities, all_countries = countries)
 
 @city_blueprint.route('/my_cities', methods=['POST'])
 def add_city():

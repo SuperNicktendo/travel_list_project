@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        {% for city in all_cities %}
+            <ul>
+                <li>{{ city.name }}</li>
+            </ul>
+        {% endfor %}
+    </section>
+
+{% endblock %}

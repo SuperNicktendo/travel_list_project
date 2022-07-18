@@ -9,14 +9,15 @@ import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 import repositories.user_repository as user_repository
 import repositories.visited_repository as user_repository
+import repositories.wishlist_repository as wishlist_repository
 
 
 wishlist_blueprint = Blueprint("wishlist", __name__)
 
-# @wishlist_blueprint.route('/list')
-# def bucket_list():
-#     places = city_repository.select_all()
-#     return render_template('wishlist/list.html', all_travel = places)
+@wishlist_blueprint.route('/wishlist')
+def bucket_list():
+    places = wishlist_repository.select_all()
+    return render_template('wishlist/wishlist.html', all_travel = places)
 
 # @wishlist_blueprint.route('/new_location', methods=['GET'])
 # def new_location():

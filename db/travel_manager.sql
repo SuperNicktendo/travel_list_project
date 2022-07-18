@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS countries;
 DROP TABLE IF EXISTS cities;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS visited;
+DROP TABLE IF EXISTS wishlist;
 
 CREATE TABLE countries (
     id SERIAL PRIMARY KEY,
@@ -21,6 +22,12 @@ CREATE TABLE users (
 );
 
 CREATE TABLE visited (
+    id SERIAL PRIMARY KEY,
+    city_id INT NOT NULL REFERENCES cities(id),
+    user_id INT NOT NULL REFERENCES users(id)
+);
+
+CREATE TABLE wishlist (
     id SERIAL PRIMARY KEY,
     city_id INT NOT NULL REFERENCES cities(id),
     user_id INT NOT NULL REFERENCES users(id)

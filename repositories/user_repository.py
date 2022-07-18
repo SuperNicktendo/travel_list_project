@@ -12,4 +12,14 @@ def save(user):
     user.id = id
     return user
 
+def select(id):
+    user = None
+    sql = "SELECT * FROM users WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        user = User(result['name'], result['id'])
+    return user
+
 

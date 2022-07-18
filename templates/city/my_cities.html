@@ -4,7 +4,8 @@
     <h2>My Cities</h2>
     {% for city in all_cities %}
     <ul>
-        <li>{{ city.name }}</li>
+        <li>{{ city.name }}, {{ city.country.name }}
+        </li>
     </ul>
     {% endfor %}
 </section>

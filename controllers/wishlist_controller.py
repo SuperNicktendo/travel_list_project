@@ -14,10 +14,20 @@ import repositories.wishlist_repository as wishlist_repository
 
 wishlist_blueprint = Blueprint("wishlist", __name__)
 
-@wishlist_blueprint.route('/wishlist')
-def bucket_list():
+@wishlist_blueprint.route('/wishlist', methods=["GET"])
+def show_wishlist():
     places = wishlist_repository.select_all()
     return render_template('wishlist/wishlist.html', all_travel = places)
+
+# @wishlist_blueprint.route('/wishlist', methods=["POST"])
+# def add_to_wishlist():
+#     city_id = request.form["add-to-wishlist"]
+#     city = city_repository.select(city_id)
+#     wishlist_repository.save(city)
+#     return redirect('/wishlist')
+
+
+
 
 # @wishlist_blueprint.route('/new_location', methods=['GET'])
 # def new_location():
@@ -60,5 +70,3 @@ def bucket_list():
 #     return redirect('/list')    
 
 # UPDATE VISITED
-
-

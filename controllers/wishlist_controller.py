@@ -5,10 +5,11 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.city import City
 from models.country import Country
+from models.visited import Visit
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 import repositories.user_repository as user_repository
-import repositories.visited_repository as user_repository
+import repositories.visited_repository as visited_repository
 import repositories.wishlist_repository as wishlist_repository
 
 
@@ -19,8 +20,13 @@ def show_wishlist():
     places = wishlist_repository.select_all()
     return render_template('wishlist/wishlist.html', all_travel = places)
 
-@wishlist_blueprint.route('/visited')
-
+@wishlist_blueprint.route('/visited/<id>', methods=["GET", "POST"])
+def add_to_visited(city_id, user_id):
+    city = city_repository.select(city_id)
+    user = user_repository.select(user_id)
+    visited = Visit(city, user)
+    visited_repository.save(visited)
+    return redirect('/visited')
 
 # #ADD COUNTRY:
 # @travel_blueprint.route('/my_countries', methods=["POST"])

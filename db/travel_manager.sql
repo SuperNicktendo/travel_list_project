@@ -21,13 +21,13 @@ CREATE TABLE users (
     name VARCHAR(255)
 );
 
-CREATE TABLE visited (
+CREATE TABLE wishlist (
     id SERIAL PRIMARY KEY,
     city_id INT NOT NULL REFERENCES cities(id),
     user_id INT NOT NULL REFERENCES users(id)
 );
 
-CREATE TABLE wishlist (
+CREATE TABLE visited (
     id SERIAL PRIMARY KEY,
     city_id INT NOT NULL REFERENCES cities(id),
     user_id INT NOT NULL REFERENCES users(id)

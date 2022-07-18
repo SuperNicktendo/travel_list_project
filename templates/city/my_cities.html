@@ -5,6 +5,8 @@
     {% for city in all_cities %}
     <ul>
         <li>{{ city.name }}, {{ city.country.name }}
+            <form action="/my_cities" methods="POST"></form><a href="/wishlist/{{city.id}}">
+                <button>Wishlist</button></a>
         </li>
     </ul>
     {% endfor %}

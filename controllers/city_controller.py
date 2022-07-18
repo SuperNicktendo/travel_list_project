@@ -30,7 +30,7 @@ def add_city():
     return redirect('/my_cities')
 
 @city_blueprint.route('/wishlist/<id>', methods=["GET", "POST"])
-def add_to_wishlist(id, user_id):
+def add_to_wishlist(id, user_id=1):
     city = city_repository.select(id)
     user = user_repository.select(user_id)
     wish_list = Wishlist(city, user)

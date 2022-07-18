@@ -65,7 +65,7 @@ def update_list(id):
     city_name = request.form("city-name")
     country_id = request.form["country_id"]
     country = country_repository.select(country_id)
-    city = City(city_name, country, id)
+    city = City(city_name, country)
     city_repository.update(city)
     return redirect('/list')
 

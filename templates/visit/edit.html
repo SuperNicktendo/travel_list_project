@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        <form action="/list" method="post">
+            <label for="city">City: </label>
+            <input type="text" id="city" name="city-name" placeholder="City" required>
+            <br>
+            <div>
+                <label for="country">Country</label>
+                <select id="country" name="country_id">
+                    {% for country in all_countries %}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <br>
+            <button type="submit">Add to list</button>
+        </form>
+    </section>
+
+
+
+{% endblock  %}

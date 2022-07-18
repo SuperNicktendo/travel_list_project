@@ -7,9 +7,9 @@
         <br>
         <div>
             <label for="country">Country</label>
-            <select name="country-name" id="country">
+            <select id="country" name="country_id">
                 {% for country in all_countries %}
-                    <option value="{{country.id}}">{{country.name}}</option>
+                    <option value="{{ country.id }}">{{ country.name }}</option>
                 {% endfor %}
             </select>
         </div>

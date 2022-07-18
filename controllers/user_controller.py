@@ -10,4 +10,4 @@ import repositories.country_repository as country_repository
 import repositories.user_repository as user_repository
 import repositories.visited_repository as user_repository
 
-travel_blueprint = Blueprint("travel", __name__)
+user_blueprint = Blueprint("user", __name__)

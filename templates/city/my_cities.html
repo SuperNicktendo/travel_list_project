@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+<section class="city-list">
+    <h2>My Cities</h2>
+    {% for city in all_cities %}
+    <ul>
+        <li>{{ city.name }}</li>
+    </ul>
+    {% endfor %}
+</section>
 <section>
-    <form action="/list" method="post">
+    <form action="/my_cities" method="post">
         <label for="city">City: </label>
         <input type="text" id="city" name="city-name" placeholder="City" required>
         <br>

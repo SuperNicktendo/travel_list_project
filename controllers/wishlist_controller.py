@@ -19,20 +19,8 @@ def show_wishlist():
     places = wishlist_repository.select_all()
     return render_template('wishlist/wishlist.html', all_travel = places)
 
-# @wishlist_blueprint.route('/wishlist', methods=["POST"])
-# def add_to_wishlist():
-#     city_id = request.form["add-to-wishlist"]
-#     city = city_repository.select(city_id)
-#     wishlist_repository.save(city)
-#     return redirect('/wishlist')
+@wishlist_blueprint.route('/visited')
 
-
-
-
-# @wishlist_blueprint.route('/new_location', methods=['GET'])
-# def new_location():
-#     countries = country_repository.select_all()
-#     return render_template('visit/new_location.html', all_countries=countries)
 
 # #ADD COUNTRY:
 # @travel_blueprint.route('/my_countries', methods=["POST"])

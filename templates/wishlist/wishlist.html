@@ -6,18 +6,6 @@
             <ul>
                 <li>{{ city.name }}, {{ city.country.name }}</li>
             </ul>
-            
         {% endfor %}
-    </section>
-    <section>
-            <label for="city-form">Add location: </label>
-            <form action="/wishlist">
-                <select name="city-form" id="city-form">
-                    {% for city in all_cities  %}
-                        <option value="{{city.id}}">{{city.name}}</option>
-                    {% endfor %}
-                    <button type="submit">Add to list!</button> 
-                </select>
-            </form>
     </section>
 {% endblock %}

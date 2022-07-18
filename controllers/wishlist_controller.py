@@ -16,17 +16,12 @@ travel_blueprint = Blueprint("travel", __name__)
 @travel_blueprint.route('/list')
 def bucket_list():
     places = city_repository.select_all()
-    return render_template('visit/list.html', all_travel = places)
+    return render_template('wishlist/list.html', all_travel = places)
 
 @travel_blueprint.route('/new_location', methods=['GET'])
 def new_location():
     countries = country_repository.select_all()
     return render_template('visit/new_location.html', all_countries=countries)
-
-@travel_blueprint.route('/my_countries', methods=["GET"])
-def show_countries():
-    countries = country_repository.select_all()
-    return render_template('visit/show_countries.html', all_countries = countries)
 
 #ADD COUNTRY:
 @travel_blueprint.route('/my_countries', methods=["POST"])
@@ -38,7 +33,7 @@ def add_country():
     return redirect('/my_countries')
 
 #ADD CITY
-@travel_blueprint.route('/list', methods=['POST'])
+@travel_blueprint.route('/my_city', methods=['POST'])
 def add_cty():
     city_name = request.form["city-name"]
     country_id = request.form['country_id']
@@ -58,7 +53,7 @@ def delete_location(id):
 def edit_location(id):
     city = city_repository.select(id)
     country = country_repository.select_all()
-    return render_template('visit/edit.html', city = city, all_countries = country)
+    return render_template('wishlist/edit.html', city = city, all_countries = country)
 
 # UPDATE
 @travel_blueprint.route('/<id>/edit', methods=["POST"])

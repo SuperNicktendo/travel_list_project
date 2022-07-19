@@ -41,3 +41,16 @@ def select(id):
         user = user_repository.select(result['user_id'])
         wishlist = Wishlist(city, user, result['id'])
     return wishlist
+
+def select_by_user_id(user_id):
+    wishlists =[]
+    sql = "SELECT cities.* FROM cities INNER JOIN wishlist ON wishlist.city_id = cities.id WHERE user_id = %s"
+    values = [user_id]
+    results = run_sql(sql, values)
+    user = user_repository.select(user_id)
+    for result in results:
+        city = city_repository.select(result['id'])
+        wishlist = Wishlist(city, user, result['id'])
+        wishlists.append(wishlist)
+    return wishlists
+

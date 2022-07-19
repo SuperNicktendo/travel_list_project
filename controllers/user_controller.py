@@ -9,6 +9,7 @@ import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 import repositories.user_repository as user_repository
 import repositories.visited_repository as visited_repository
+import repositories.wishlist_repository as wishlist_repository
 
 user_blueprint = Blueprint("user", __name__)
 

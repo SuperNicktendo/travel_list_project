@@ -15,10 +15,10 @@ import repositories.wishlist_repository as wishlist_repository
 
 wishlist_blueprint = Blueprint("wishlist", __name__)
 
-@wishlist_blueprint.route('/wishlist', methods=["GET"])
-def show_wishlist(cities):
-    cities = wishlist_repository.select_all()
-    return render_template('wishlist/wishlist.html', all_travel = cities, all_users=users)
+@wishlist_blueprint.route('/wishlist/<id>')
+def show_wishlist(id):
+    cities = wishlist_repository.select_by_user_id(id)
+    return render_template('wishlist/wishlist.html', all_travel = cities)
 
 @wishlist_blueprint.route('/visited/<id>', methods=["GET", "POST"])
 def add_to_visited(city_id, user_id):

@@ -2,9 +2,10 @@
 {% block content %}
     <h2>The Gold List</h2>
     <section>
-        {% for places in all_places %}
+        {% for places in all_travel %}
             <ul>
-                <li>{{ places.name }}</li>
+                <li>{{ places.city.name }}</li>
+                <a href="visited/add/{{places.id}}">Visited</a>
             </ul>
         {% endfor %}
     </section>

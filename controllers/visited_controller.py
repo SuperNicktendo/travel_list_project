@@ -12,7 +12,7 @@ import repositories.visited_repository as visited_repository
 
 visit_blueprint = Blueprint("visit", __name__)
 
-@visit_blueprint.route('/visited', methods=["GET"])
-def show_visited():
-    visited = visited_repository.select_all()
+@visit_blueprint.route('/visited/<id>', methods=["GET"])
+def show_visited(id):
+    visited = visited_repository.select_by_user_id(id)
     return render_template('visited/visited.html', all_visits=visited)

@@ -25,3 +25,15 @@ def select_all():
         visit = Visit(city, user, row['id'])
         visits.append(visit)
     return visits
+
+def select_by_user_id(user_id):
+    has_visited =[]
+    sql = "SELECT cities.* FROM cities INNER JOIN visited ON visited.city_id = cities.id WHERE user_id = %s"
+    values = [user_id]
+    results = run_sql(sql, values)
+    user = user_repository.select(user_id)
+    for result in results:
+        city = city_repository.select(result['id'])
+        visited = Visit(city, user, result['id'])
+        has_visited.append(visited)
+    return has_visited

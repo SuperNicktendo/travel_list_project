@@ -3,11 +3,11 @@
 <section>
     <h2>Update Location:</h2>
     <section>
-        <form action="/my_countries" method="post">
-            <label for="country">Country: </label>
-            <input type="text" id="country" name="country_id" placeholder="Country" required>
+        <form action="/my_countries/{{country.id}}/update" method="post">
+            <label for="country.name">Country: </label>
+            <input type="text" id="country.name" name="country.name"  placeholder="Country" required>
             <br>
-            <button type="submit">Add to list</button>
+            <button type="submit">Update</button>
         </form>
     </section>
 

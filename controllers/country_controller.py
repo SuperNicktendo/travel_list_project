@@ -29,4 +29,13 @@ def add_country():
 @country_blueprint.route('/my_countries/<id>/edit', methods=["GET"])
 def edit_country(id):
     country = country_repository.select(id)
-    return render_template('/country/edit.html')
+    return render_template('/country/edit.html', country = country)
+
+#UPDATE
+@country_blueprint.route('/my_countries/<id>/update', methods=["GET","POST"])
+def update_country(id):
+    country_id = request.form["country.name"]
+    country = Country(country_id, id)
+    country_repository.update_country(country)
+    return redirect('/my_countries')
+

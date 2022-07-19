@@ -20,13 +20,14 @@ def show_wishlist(id):
     cities = wishlist_repository.select_by_user_id(id)
     return render_template('wishlist/wishlist.html', all_travel = cities)
 
-@wishlist_blueprint.route('/visited/<id>', methods=["GET", "POST"])
-def add_to_visited(city_id, user_id):
-    city = city_repository.select(city_id)
+@wishlist_blueprint.route('/wishlist/visited/add/<id>', methods=["GET"])
+def add_to_visited(id, user_id=1):
+    city = city_repository.select(id)
     user = user_repository.select(user_id)
     visited = Visit(city, user)
     visited_repository.save(visited)
-    return redirect('/visited')
+    wishlist_repository.delete_by_city_and_user(id, user_id)
+    return redirect(f'/visited/{user_id}')
 
 # #ADD COUNTRY:
 # @travel_blueprint.route('/my_countries', methods=["POST"])

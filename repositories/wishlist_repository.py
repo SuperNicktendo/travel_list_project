@@ -54,3 +54,8 @@ def select_by_user_id(user_id):
         wishlists.append(wishlist)
     return wishlists
 
+def delete_by_city_and_user(city_id, user_id):
+    sql = "DELETE FROM wishlist WHERE city_id = %s AND user_id = %s"
+    values = [city_id, user_id]
+    run_sql(sql, values)
+

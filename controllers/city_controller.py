@@ -37,3 +37,5 @@ def add_to_wishlist(id, user_id=1):
     wishlist_repository.save(wish_list)
     return redirect(f'/wishlist/{user_id}')
 
+
+

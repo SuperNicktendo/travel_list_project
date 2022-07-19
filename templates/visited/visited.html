@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for city in cities  %}
+    <h3>Visited:</h3>
+    {% for wishlist in all_cities  %}
         <ul>
-            <li>{{ city.id }}</li>
+            <li>{{ wishlist.city.name }}</li>
         </ul>
         
     {% endfor %}

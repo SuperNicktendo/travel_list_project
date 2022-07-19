@@ -59,3 +59,4 @@ def delete_by_city_and_user(city_id, user_id):
     values = [city_id, user_id]
     run_sql(sql, values)
 
+

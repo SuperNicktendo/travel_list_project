@@ -29,23 +29,11 @@ def add_to_visited(id, user_id=1):
     wishlist_repository.delete_by_city_and_user(id, user_id)
     return redirect(f'/visited/{user_id}')
 
-# #ADD COUNTRY:
-# @travel_blueprint.route('/my_countries', methods=["POST"])
-# def add_country():
-#     country_name = request.form['country_id']
-#     country = Country(country_name)
-#     country_repository.save(country)
-#     places = country_repository.select_all()
-#     return redirect('/my_countries')
-
-# #ADD CITY
-
-
 # #DELETE FROM LIST
-# @travel_blueprint.route('/list/<id>/delete', methods=['POST'])
-# def delete_location(id):
-#     city_repository.delete(id)
-#     return redirect('/list')
+@wishlist_blueprint.route('/wishlist/<id>/delete', methods=['POST', 'GET'])
+def delete_location(id, user_id =1):
+    wishlist_repository.delete_by_city_and_user(id, user_id)
+    return redirect(f'/wishlist/{user_id}')
 
 # #EDIT 
 # @travel_blueprint.route('/<id>/edit', methods=["GET"])

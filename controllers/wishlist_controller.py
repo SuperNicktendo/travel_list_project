@@ -36,20 +36,18 @@ def delete_location(id, user_id =1):
     return redirect(f'/wishlist/{user_id}')
 
 #EDIT 
-@wishlist_blueprint.route('/wishlist/<id>/edit', methods=["GET", "POST"])
-def edit_city(id):
+@wishlist_blueprint.route('/wishlist/<id>/edit', methods=["GET"])
+def edit_city(id, user_id=1):
     city = city_repository.select(id)
     country = country_repository.select_all()
-    return render_template('wishlist/edit.html', city = city, all_countries = country)
+    return render_template('/wishlist/edit.html', city = city, all_countries = country, user_id = user_id)
 
-# # UPDATE
-# @travel_blueprint.route('/<id>/edit', methods=["POST"])
-# def update_list(id):
-#     city_name = request.form["city-name"]
-#     country_id = request.form["country_id"]
-#     country = country_repository.select(country_id)
-#     city = City(city_name, country)
-#     city_repository.update(city)
-#     return redirect('/list')    
-
-# UPDATE VISITED
+# UPDATE
+@wishlist_blueprint.route('/wishlist/<id>/edit', methods=["GET","POST"])
+def update_list(id):
+    city_name = request.form["city-name"]
+    country_id = request.form["country_id"]
+    country = country_repository.select(country_id)
+    city = City(city_name, country, id)
+    wishlist_repository.update_wishlist(city)
+    return redirect('/wishlist/<id>')

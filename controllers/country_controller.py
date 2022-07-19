@@ -24,3 +24,10 @@ def add_country():
     country_repository.save(country)
     places = country_repository.select_all()
     return redirect('/my_countries')
+
+#EDIT 
+@country_blueprint.route('/wishlist/<id>/edit', methods=["GET"])
+def edit_city(id, user_id=1):
+    city = city_repository.select(id)
+    country = country_repository.select_all()
+    return render_template('/wishlist/edit.html', city = city, all_countries = country, user_id = user_id)

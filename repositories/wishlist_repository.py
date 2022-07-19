@@ -1,3 +1,4 @@
+import sqlite3
 from db.run_sql import run_sql
 from models.visited import Visit
 from models.city import City
@@ -58,5 +59,13 @@ def delete_by_city_and_user(city_id, user_id):
     sql = "DELETE FROM wishlist WHERE city_id = %s AND user_id = %s"
     values = [city_id, user_id]
     run_sql(sql, values)
+
+def update_wishlist(wish_list):
+    sql = "UPDATE wishlist SET (city_id, user_id) = (%s, %s) WHERE id = %s"
+    values = [wish_list.city.id, wish_list.user.id]
+    run_sql(sql, values)
+
+
+
 
 

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <h2>Update Location:</h2>
+    <form class="update-form" action="/wishlist/{{user_id}}" method="POST">
+        <label for="update-city">City: </label>
+        <input type="text" name="city-name" id="city-name" placeholder="City" required>
+        <br>
+        <label for="update-country"></label>
+        <select name="country_id" id="country">
+            {% for country in all_countries %}
+                <option value="{{country.id}}">{{ country.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Update</button>
+
+    </form>
+
+</section>
+
+{% endblock %}

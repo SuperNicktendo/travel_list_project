@@ -35,12 +35,12 @@ def delete_location(id, user_id =1):
     wishlist_repository.delete_by_city_and_user(id, user_id)
     return redirect(f'/wishlist/{user_id}')
 
-# #EDIT 
-# @travel_blueprint.route('/<id>/edit', methods=["GET"])
-# def edit_location(id):
-#     city = city_repository.select(id)
-#     country = country_repository.select_all()
-#     return render_template('wishlist/edit.html', city = city, all_countries = country)
+#EDIT 
+@wishlist_blueprint.route('/wishlist/<id>/edit', methods=["GET", "POST"])
+def edit_city(id):
+    city = city_repository.select(id)
+    country = country_repository.select_all()
+    return render_template('wishlist/edit.html', city = city, all_countries = country)
 
 # # UPDATE
 # @travel_blueprint.route('/<id>/edit', methods=["POST"])

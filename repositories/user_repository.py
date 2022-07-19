@@ -22,4 +22,14 @@ def select(id):
         user = User(result['name'], result['id'])
     return user
 
+def select_all():
+    users = []
+    sql = "SELECT * FROM users"
+    results = run_sql(sql)
+    for row in results:
+        user = User(row['name'], row['id'])
+        users.append(user)
+    return users
+
+
 

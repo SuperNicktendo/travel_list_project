@@ -18,14 +18,15 @@ def save(wishlist):
     wishlist.id = id
     return wishlist
 
-def select_all():
+def select_all(city):
     wishlists =[]
-    sql = "SELECT * FROM wishlist"
-    results = run_sql(sql)
+    sql = "SELECT cities.* FROM cities INNER JOIN wishlist ON wishlist.city_id = cities.id WHERE city_id = %s"
+    values = [city.id]
+    results = run_sql(sql, values)
     for row in results:
-        city = city_repository.select(row['city_id'])
-        user = user_repository.select(row['user_id'])
-        wishlist = Wishlist(city, user, row['id'])
+        # city = city_repository.select(row['city_id'])
+        # user = user_repository.select(row['user_id'])
+        wishlist = Wishlist(row['city'], row['user'], row['id'])
         wishlists.append(wishlist)
     return wishlists
 

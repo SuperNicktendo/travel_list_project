@@ -63,5 +63,22 @@ header {
     margin: 0;
 }
 
+.cities {
+    background-color: rgb(229, 191, 95);
+}
+.city-list {
+    display: inline-block;
+    border: 5px solid brown;
+    margin-left: 10%;
+    padding-right: 5%;
+}
+
+.cities-title {
+    display: flex;
+    justify-content: center;
+    color: brown;
+    margin: 0;
+    margin-bottom: 3%;
+}
 
 

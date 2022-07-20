@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="cities">
+<h1 class="cities-title">My Cities</h1>
 <section class="city-list">
-    <h2>My Cities</h2>
     {% for city in all_cities %}
     <ul>
         <li>{{ city.name }}, {{ city.country.name }}
-            <a href="/wishlist/add/{{city.id}}">Wishlist</a>
+            <a href="/wishlist/add/{{city.id}}">Add to wishlist</a>
         </li>
     </ul>
     {% endfor %}
@@ -27,4 +28,5 @@
         <button type="submit">Add to list</button>
     </form>
 </section>
+</div>
 {% endblock  %}

@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: goldenrod;
+    background-color: rgb(189, 189, 72);
     margin: auto;
     color: brown;
     border: 0;
@@ -40,3 +40,25 @@ header {
     justify-content: center;
     margin: 0;
 }
+
+.user {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+
+.user-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-button1 {
+    margin: 0;
+}
+
+.user-button2 {
+    margin: 0;
+}
+
+
+

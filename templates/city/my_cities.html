@@ -5,13 +5,13 @@
 <section class="city-list">
     {% for city in all_cities %}
     <ul>
-        <li>{{ city.name }}, {{ city.country.name }}
-            <a href="/wishlist/add/{{city.id}}">Add to wishlist</a>
-        </li>
+        <h3><li>{{ city.name }}, {{ city.country.name }}
+            <h4><a href="/wishlist/add/{{city.id}}">Add to wishlist</a></h4>
+        </li></h3>
     </ul>
     {% endfor %}
 </section>
-<section>
+<section class="add-city-form">
     <form action="/my_cities" method="post">
         <label for="city">City: </label>
         <input type="text" id="city" name="city-name" placeholder="City" required>

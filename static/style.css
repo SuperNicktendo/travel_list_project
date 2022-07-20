@@ -42,9 +42,12 @@ header {
 }
 
 .user {
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 10%;
+    margin-top: 5%;
+    border: 5px solid olivedrab;
 }
 
 .user-buttons {

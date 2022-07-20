@@ -3,7 +3,7 @@
     <h3>Visited:</h3>
     {% for wishlist in all_cities  %}
         <ul>
-            <li>{{ wishlist.city.name }}</li>
+            <li>{{ wishlist.city.name }}, {{ wishlist.city.country.name }}</li>
         </ul>
         
     {% endfor %}

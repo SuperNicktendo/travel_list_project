@@ -6,7 +6,7 @@
     <section class="wishlist-list">
         {% for places in all_travel %}
             <ul>
-                <li>{{ places.city.name }}</li>
+                <li>{{ places.city.name }}, {{ places.city.country.name }}</li>
                 <a href="visited/add/{{places.id}}">Visited</a>
                 <a href="{{places.id}}/delete">Remove</a>
             </ul>

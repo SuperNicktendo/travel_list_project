@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="profile-logo">
-        <img src="static/images/profile_scroll.jpeg" width="400" height="250" alt="profile-scroll">
-    </div>
+<div class="profile">
+    <h1 class="profile-title">Profile</h1>
     {% for user in all_users  %}
         <div class="user">
             <h1> {{ user.name }}</h1>
             <div class="user-buttons">
-            <h3 class="user-button1"><a href="/wishlist/{{user.id}}" >Wishlist</a></h3>
+            <h3 class="user-button1"><a href="/wishlist/{{user.id}}">Wishlist</a></h3>
             <h3 class="user-button2"><a href="/visited/{{user.id}}">Visited</a></h3>
             </div>
         </div>
+</div>
     {% endfor %}
 {% endblock %}

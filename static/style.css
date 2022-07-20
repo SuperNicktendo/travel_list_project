@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: rgb(209, 225, 177);
     font-family:fantasy;
     color: rgb(67, 57, 39);
     margin: 0;
@@ -35,10 +35,11 @@ header {
     margin: 0;
 }
 
-.profile-logo {
+.profile-title {
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin: 1%;
+    margin-top: 2%;
 }
 
 .user {
@@ -66,6 +67,7 @@ header {
 .cities {
     background-color: rgb(229, 191, 95);
 }
+
 .city-list {
     display: inline-block;
     border: 5px solid brown;
@@ -91,4 +93,15 @@ header {
     vertical-align: top;
 }
 
+.wishlist-title {
+    display: flex;
+    justify-content: center;
+    color: olivedrab;
+}
 
+.wishlist-list {
+    display: inline-block;
+    border: 5px solid olivedrab;
+    padding-right: 2rem;
+    margin-left: 10%;
+}

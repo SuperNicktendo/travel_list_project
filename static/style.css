@@ -2,22 +2,29 @@ body {
     background-color: white;
     font-family:fantasy;
     color: rgb(67, 57, 39);
+    margin: 0;
 }
 
 header {
     background-color: goldenrod;
     margin: auto;
     color: brown;
+    border: 0;
 }
 
 .homepage-title {
     display: flex;
     justify-content: center;
+    border: 0;
 }
 
 .homepage-body {
     display: flex;
-    justify-content:flex-start;
+    justify-content:center;
+}
+
+.homepage-pic {
+    margin: 0;
 }
 
 .menu {
@@ -25,4 +32,11 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     justify-content: space-evenly;
+    margin: 0;
+}
+
+.profile-logo {
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }

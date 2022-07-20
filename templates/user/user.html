@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h3>User:</h3>
+    <div>
+        <img class="profile-logo" src="static/images/profile_scroll.jpeg" width="500" height="300" alt="profile-scroll">
+    </div>
     {% for user in all_users  %}
         <div>
             <h2> {{ user.name }}</h2>
